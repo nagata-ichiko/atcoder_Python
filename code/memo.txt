@@ -1,0 +1,32 @@
+#整数
+
+a = int(input())
+
+# スペース区切りの整数の入力
+b, c = map(int, input().split())
+
+# 文字列の入力
+s = input()
+
+# 出力
+print("{} {}".format(a+b+c, s))
+
+#str型で受け取るとき
+s = input() 
+#int型で受け取るとき
+s = int(input()) 
+#float型　(小数)で受け取るとき
+s = float(input())
+
+
+#list型で取得
+l = list(map(int, input().split()))
+
+# 2じげん
+
+N = int(input())
+x = list(map(int, input().split()))
+y = list(map(int, input().split()))
+
+
+https://qiita.com/jamjamjam/items/e066b8c7bc85487c0785
