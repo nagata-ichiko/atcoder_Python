@@ -33,4 +33,13 @@ x = list(map(int, input().split()))
 y = list(map(int, input().split()))
 
 
+https://qiita.com/jamjamjam/items/e066b8c7bc85487c0785https://qiita.com/jamjamjam/items/e066b8c7bc85487c0785#進数変換
+.hex
+
+ 
+ #16進数0ｘ削除大文字
+ 
+print(format(N, '02x').upper())
+
 https://qiita.com/jamjamjam/items/e066b8c7bc85487c0785
+
