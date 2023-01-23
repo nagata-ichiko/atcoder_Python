@@ -43,3 +43,8 @@ print(format(N, '02x').upper())
 
 https://qiita.com/jamjamjam/items/e066b8c7bc85487c0785
 
+
+# 出現回数
+l = list(map(str, input().split()))
+c = collections.Counter(l)
+print(c.most_common()[-1][0])
