@@ -22,12 +22,10 @@ s = int(input())
 #float型　(小数)で受け取るとき
 s = float(input())
 
-
 #list型で取得
 l = list(map(int, input().split()))
 
 # 2じげん
-
 N = int(input())
 x = list(map(int, input().split()))
 y = list(map(int, input().split()))
@@ -35,12 +33,8 @@ y = list(map(int, input().split()))
 
 https://qiita.com/jamjamjam/items/e066b8c7bc85487c0785https://qiita.com/jamjamjam/items/e066b8c7bc85487c0785#進数変換
 .hex
-
- 
  #16進数0ｘ削除大文字
- 
-print(format(N, '02x').upper())
-
+ print(format(N, '02x').upper())
 https://qiita.com/jamjamjam/items/e066b8c7bc85487c0785
 
 
@@ -54,3 +48,14 @@ print(c.most_common()[-1][0])
 
  # 配列の重複をなくす
 a = set(a)
+
+# 配列以外のものが含まれているか
+a = ["A", "T", "C", "G"]
+for i in range(len(s)):
+    cnt = 0
+    for j in range(i, len(s)):
+        if s[j] not in a:
+            break
+        cnt += 1
+    ans = max(ans, cnt)
+print(ans)
