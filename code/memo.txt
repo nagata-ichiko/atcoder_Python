@@ -48,3 +48,9 @@ https://qiita.com/jamjamjam/items/e066b8c7bc85487c0785
 l = list(map(str, input().split()))
 c = collections.Counter(l)
 print(c.most_common()[-1][0])
+
+# どこからどこまで
+ for i in range(1,n-1):
+
+ # 配列の重複をなくす
+a = set(a)
