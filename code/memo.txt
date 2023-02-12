@@ -80,3 +80,11 @@ for i in range(0,num-2):
             if s[i+2] == "C":
                 ans+=1
 print(ans)
+
+# 桁数を取得
+len(str(i)) 
+
+# Listの一致部分を取得
+merge = set(alist) & set(blist)
+# 大きい順に取得
+print(sorted(merge,reverse=True)[k-1])
