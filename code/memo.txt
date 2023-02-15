@@ -88,3 +88,8 @@ len(str(i))
 merge = set(alist) & set(blist)
 # 大きい順に取得
 print(sorted(merge,reverse=True)[k-1])
+
+
+# 最大値とそのList上の位置
+start = max(l)
+start = l.index(start)
