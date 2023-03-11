@@ -93,3 +93,14 @@ print(sorted(merge,reverse=True)[k-1])
 # 最大値とそのList上の位置
 start = max(l)
 start = l.index(start)
+
+
+# 辞書型作成/追加/
+mydict  = {}
+mydict[0] = 0
+c = 1
+for i in l:
+    mydict[c] = i
+    c+=1
+for key,value in mydict.items():
+    mydict[value] = 0    
