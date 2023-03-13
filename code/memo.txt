@@ -104,3 +104,6 @@ for i in l:
     c+=1
 for key,value in mydict.items():
     mydict[value] = 0    
+
+# 辞書の最大値をもつKeyを複数返す
+max_k_list = [kv[0] for kv in mydict.items() if kv[1] == max(mydict.values())]
