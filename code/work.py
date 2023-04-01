@@ -1,23 +1,15 @@
-N, K = map(int, input().split())
-A = list(map(int, input().split()))
-B = list(map(int, input().split()))
+def min_product(N, M):
+    for a in range(1, N + 1):
+        b = -(-M // a)  # ceil(M / a)
+        if b <= N:
+            return a * b
+    return -1
 
-mydict  = {}
-mydict[0] = 0
-c = 1
-for i in A:
-    mydict[c] = i
-    c+=1
-    
-max_k_list = [kv[0] for kv in mydict.items() if kv[1] == max(mydict.values())]
+# 標準入力から N, M を受け取る
+N, M = map(int, input().split())
 
-c = 0
-for i in range(len(B)):
-    if B[i]  in max_k_list:
-        c+=1
+# 条件を満たす最小の正整数 X を求める
+result = min_product(N, M)
 
-if c == 0:
-    print("No")
-else:
-    print("Yes")
-    
+# 結果を出力する
+print(result)
