@@ -1,20 +1,22 @@
-N, K = map(int, input().split())
+import bisect
+
+N, M, D = map(int, input().split())
 A = list(map(int, input().split()))
+B = list(map(int, input().split()))
 
-result = 0
+# 1. 並び替え
+A.sort()
+B.reverse()
 
-buff = [0] * (N - 1)
+result = -1
 
-for i in range(0, N - 1):
-	if i == 0:
-		buff[i] = 0
-	else:
-		buff[i] = buff[i - 1]
-  
-    # 数がなくなるまで、数値を超えるまで
-	while buff[i] < (N - 1) and ( A[buff[i]+1] - A[i]) <= K:
-		buff[i] += 1
-
-for i in range(0, N-1):
-	result += (buff[i] - i)
+# 2分探査
+for b in B:
+    # 値+Dするとbより大きい差がD以下の値のうち最大の値のインデックスを返す
+    target= bisect.bisect_right(A, b + D) -1
+    if target >= 0 and A[target] >= b - D:
+        # 要素がある、かつさがD以下
+        if result < A[target] + b:
+            result = A[target] + b
+		
 print(result)
