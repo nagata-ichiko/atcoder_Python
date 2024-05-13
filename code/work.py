@@ -1,49 +1,19 @@
-def check (list):
-    flg = True
-    for i in range(len(list)):
-        if list[i] != i+1:
-            flg = False
-            break
-    return flg
-
-def sort(list):
-    actionListA = []
-    actionListB = []
-    for i in range(len(list)):
-        if list[i] == i+1:
-            continue
-        actionListA.append(i)
-        buf = list[i]
-        list[i] = list[buf-1]
-        list[buf-1] = buf
-        actionListB.append(buf-1)
-    return actionListA, actionListB, list
-
-
+import numpy as np
 N = int(input())
-A = list(map(int, input().split()))
+a = [list(map(int, input().split())) for l in range(N)]
+b = a.copy()
 
-flg = False
-actionListA = []
-actionListB = []
-while flg == False:
-    # print(A)
-    flg = check(A)
-    if flg == True:
-        break
-    
-    actionA, actionB, list = sort(A)
-    A = list
-    for i in range(len(actionA)):
-        actionListA.append(actionA[i])
-        actionListB.append(actionB[i])
+result = [None] * N
 
-if len(actionListA) == 0:
-    print(0)
-else:
-    print(len(actionListA))
-    for i in range(len(actionListA)):
-        if actionListA[i] < actionListB[i]:
-            print(actionListA[i]+1, actionListB[i]+1)
-        else:
-            print(actionListB[i]+1, actionListA[i]+1)
+for i in range(N):
+    buf = [None] * N
+    for j in range(N):
+        x1,y1 = a[i]
+        x2,y2 = b[j]
+        buf[j] = np.sqrt((x1-x2)**2 + (y1-y2)**2)
+    result[i] = buf.index(max(buf))+1
+
+
+for i in result:
+    print(i)
+
