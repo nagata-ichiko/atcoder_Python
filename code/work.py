@@ -1,14 +1,6 @@
-S = input()
-T = input()
+N = int(input())
+grid = [list(input().strip()) for _ in range(N)]
 
-count =0
-result = []
-
-
-for i in range(len(T)):
-    if S[count] == T[i]:
-        count += 1
-        result.append(i+1)
-
-print(" ".join(map(str, result)))
-
+rotated_grid = list(zip(*grid[::-1]))
+for row in rotated_grid:
+    print("".join(row))
